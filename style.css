@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:wght@100;300;400;700&family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
+
+  /*-----nav section----*/
+
+.container-fluid img {
+  animation: slideTop 1s ease forwards;
+  opacity: 0;
+}
 .navbar ul li a {
   position: relative;
+  opacity: 0;
+  animation: slideTop .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 .navbar ul li a:hover:after {
   content: '';
@@ -15,6 +25,21 @@
   opacity: 1;
 }
 
+/*---KEYFRAMES ANIMATION*/
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+      /*-----home section----*/
+
 #home {
   width: 100%;
   height: 100%;
@@ -23,7 +48,16 @@
   background-size: cover;
   background-position: center;
 }
-
+#home h1 {
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: .7s;
+}
+#home p {
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
 #home {
   padding-top: 170px;
   padding-bottom: 170px;
@@ -32,7 +66,36 @@
 #home button {
   box-shadow: 0 0 7px white;
   font-weight: bold;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1.3s;
 }
+
+/*---KEYFRAMES ANIMATION*/
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translatex(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translatex(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+
+        /*-----Portfolio section----*/
 
 .gallery img {
   width: 340px;
@@ -48,6 +111,8 @@
 }
 
 
+       /*-----Contant section----*/
+
 .contant-form .form-field {
   position: relative;
   margin: 40px 0;
@@ -56,7 +121,7 @@
 .contant-form .input-text {
   display: block;
   width: 100%;
-  height: 20px;
+  height: 40px;
   border-width: 0 0 2px 0;
   border-color: #777;
   font-size: 18px;
@@ -91,12 +156,12 @@
   border: none;
   width: 200px;
   cursor: pointer;
-  box-shadow: 0 0 7px black;
+  box-shadow: 0 0 7px #000;
   font-weight: bold;
 }
 
 .contant-form .submit-btn:hover {
-  box-shadow: 0 0 15px black;
+  box-shadow: 0 0 15px #000;
 }
 
 .contant-form .input-text:focus + .label,
